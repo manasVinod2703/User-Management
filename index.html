@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>User Management</title>
+</head>
+<body>
+      <div class="form-container">
+
+        <h1>Register Here!</h1>
+        <form>
+            <p class="error"></p>
+
+            <div class="form-input">
+                <label>Name</label>
+                <input type="text" name="name" id="name">
+            </div>
+
+            <div class="form-input">
+                <label>Email</label>
+                <input type="email" name="email" id="email">
+            </div>
+
+            <div class="form-input">
+                <label>Password</label>
+                <input type="password" name="password" id="password">
+            </div>
+
+            <div class = "dropdown">
+                <label>City</label>
+                <select>
+                    <option value="pune">Pune</option>
+                    <option value="aurangabad">Aurangabad</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="n">Nagpur</option>
+                </select>
+            </div>
+
+            <div class = "form-gender">
+                <label>Gender</label>
+                <div class="radios">
+                <span>Male</span>
+                <input type="radio" name="male" id="male" value="male"></input>
+                <span>Female</span>
+                <input type="radio" name="female" id="female" value="female"></input>
+                </div>
+            </div>
+         
+            <div class="btn">
+            <button type="submit" id="submit">
+                Submit
+            </button>
+
+            <button type="reset" id="reset">
+                Reset
+            </button>
+        </div>
+
+        </form>
+      </div>
+
+      <script src="./index.js"></script>
+</body>
+</html>
