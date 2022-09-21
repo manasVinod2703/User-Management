@@ -4,12 +4,21 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const error = document.querySelector('.error')
 const submit = document.getElementById('submit');
+const maleInput = document.getElementById('male');
+const femaleInput = document.getElementById('female');
+const city = document.getElementById('city');
 
 
 var errorText = "";
 
+let users = new Array();
+const getUsersFromLocalStorage = ()=>{
+    users = JSON.parse(localStorage.getItem('users')) || [];
+}
 
+getUsersFromLocalStorage();
 
+``
 const showError = (err)=>{
     error.innerHTML = `${err}`;
     error.classList.add('show')
@@ -64,7 +73,40 @@ const validateInput = ()=>{
 
 submit.addEventListener('click',(e)=>{
     e.preventDefault();
-    validateInput();
+   if(validateInput()){
+      addUserToLocalStorage()
+      //window.location = '/users.html'
+   }
     
 })
+
+
+
+const addUserToLocalStorage  = ()=>{
+    const user = {
+        name : nameInput.value,
+        email : email.value,
+        password : password.value,
+        gender : maleInput.checked ? maleInput.value : femaleInput.value,
+        city : city.options[city.selectedIndex].value
+        
+    }
+
+    
+
+    users.push(user);
+    //  console.log(city.options[city.selectedIndex].value);
+    
+
+    if(users){
+        localStorage.setItem('users',JSON.stringify(users));
+    }
+}
+
+
+//getting the users from the local storage
+
+
+console.log(users);
+    
 
